@@ -38,7 +38,8 @@
         "error",
         "date",
         "file",
-        "sessions"
+        "sessions",
+        "heroku-https"
     ],
 
     "//": "Choose which commands this application can run",

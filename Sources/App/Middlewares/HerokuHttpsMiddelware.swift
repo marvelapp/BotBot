@@ -5,9 +5,10 @@
 //  Created by Maxime De Greve on 19/02/2018.
 //
 
+import Foundation
 import HTTP
 
-class HerokuHttpsMiddleware: Middleware {
+final class HerokuHttpsMiddleware: Middleware {
 
     let config: Config
     init(config: Config) throws {
