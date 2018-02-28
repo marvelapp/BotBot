@@ -1,0 +1,20 @@
+#extend("base")
+
+#export("title") {
+    <title>Marvel Slack Bot - Support</title>
+}
+
+#export("content") {
+    <div class="bg-snow--d padding-l paddingTop-l" style="height:100px">
+    <div class="textAlign-center width-100 pageWrap pageWrap--l">
+    <div class="display-inlineBlock textAlign-center width-100" style="max-width:700px;">
+    <div class="marginBottom-xl"><img width="93" height="auto" src="images/logo.png" alt="Marvel Logo"></div>
+    </div>
+    </div>
+    </div>
+    <div class="pageWrap paddingTopBottom-xl marginTop-xl textAlign-center position-relative" style="max-width: 560px;">
+    <h1 class="c-slate lineHeight-xl fontSize-xl breakPointM-fontSize-xxl breakPointM-lineHeight-xxl marginBottom-xs">Any questions or problems?</h1>
+    <a class="button button--l button--flat bg-marvel" href="mailto:support@leaderboardapp.com">Get in touch</a>
+    </div>
+}
+

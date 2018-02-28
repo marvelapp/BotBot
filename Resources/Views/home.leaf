@@ -1,0 +1,74 @@
+#extend("base")
+
+#export("title") { BotBot - A Slack bot for Marvel }
+
+#export("content") {
+
+  <div id="home">
+
+    <div class="container">
+
+      <div class="main">
+
+        <div class="github animated fadeIn">
+          <iframe src="https://ghbtns.com/github-btn.html?user=marvelapp&repo=MarvelSlackBot&type=watch&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+        </div>
+
+
+
+        <div class="content">
+
+          <!-- Logo -->
+          <div class="logo-area animated slideInDown">
+            <div class="logo"></div>
+          </div>
+
+          <!-- Middle -->
+          <div class="animated slideInDown">
+            <h1>A Slack bot for Marvel</h1>
+            <h2>Post & create Marvel projects directly from Slack</h2>
+            <a class="button" href="#(connect-url)">Connect with <img src="/images/marvel-logo.svg" style="margin-left:5px"></a>
+          </div>
+
+          <div class="robot-area">
+              <div class="robot animated fadeIn"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="commands">
+
+        <div class="content">
+
+          <!-- Screenshots -->
+          <div class="screenshot animated fadeIn">
+            <div id="screenshot-create-project" class="active"></div>
+            <div id="screenshot-post"></div>
+            <div id="screenshot-add-people"></div>
+          </div>
+
+        </div>
+
+        <div class="commands-menu">
+          Commands
+          <ol>
+            <li data-tab="create-project" id="create-project" class="active">/create-project</li>
+            <li data-tab="post" id="post">/projects</li>
+            <li data-tab="add-people" id="add-people">/add-people</li>
+          </ol>
+        </div>
+
+        <div class="footer-area animated fadeIn">
+          <a href="https://marvelapp.com/developers/" target="_blank">Uses the Marvel API</a>
+        </div>
+
+        <div class="background-pattern"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+}

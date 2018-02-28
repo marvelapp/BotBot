@@ -1,0 +1,379 @@
+body {
+  font-family: 'Rubik', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 40px;
+  color: #38394A;
+  letter-spacing: 0;
+  line-height: 45px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 22px;
+  color: #B6B4CC;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+a{
+  text-decoration: none;
+  color: #1FB6FF;
+}
+
+.button {
+  text-decoration: none;
+  text-align: center;
+  background: #263445;
+  font-size: 16px;
+  border-radius: 30px;
+  font-weight: 500;
+  line-height: 60px;
+  color: white;
+  display: inline-block;
+  padding-left: 33px;
+  padding-right: 33px;
+  vertical-align: middle;
+}
+
+.button:hover {
+  background: #3B4859;
+}
+
+.button > * {
+    vertical-align: middle;
+}
+
+.logo{
+  width: 189px;
+  height: 40px;
+  background-image: url('/images/logo.png');
+  background-repeat: no-repeat;
+}
+
+#dashboard {
+  background:url('/images/pattern-pink.svg') white repeat;
+  text-align: center;
+}
+
+#dashboard .container {
+  display: flex; /* or inline-flex */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 37px;
+  box-sizing: border-box;
+}
+
+#dashboard .success-illustration {
+  width: 246px;
+  height: 246px;
+  background:url('/images/robot-circle-no-eyes.png') center center no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:  65px;
+  position: relative;
+}
+
+#dashboard .setup-slack-illustration {
+  width: 246px;
+  height: 246px;
+  background:url('/images/robot-circle.png') center center no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:  65px;
+}
+
+#dashboard .success-illustration .eye-left {
+  position: absolute;
+  display: block;
+  left: 60px;
+  margin-top: 104px;
+}
+
+#dashboard .success-illustration .eye-right {
+  position: absolute;
+  right: 90px;
+  margin-top: 104px;
+  display: block;
+}
+
+#dashboard .container .logo-area{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+#dashboard .container .footer-area{
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-end;
+  justify-content: center;
+  -webkit-animation-delay: 1s;
+}
+
+#dashboard .container .slack-button{
+  margin-top: 20px;
+  display: inline-block;
+}
+
+#home {
+  background: white;
+  text-align: center;
+}
+
+#home .container {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  align-items: stretch;
+  height: 100vh;
+}
+
+#home .container > div {
+	width: 50%;
+}
+
+#home .container > div:last-child {
+  background: #FFCDCD;
+}
+
+#home .container .main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 37px 37px 0px 37px;
+  box-sizing: border-box;
+  position:relative;
+}
+
+#home .container .main .github {
+  position: absolute;
+  top: 37px;
+  right: -54px;
+  width: 143px;
+  overflow: hidden;
+  -webkit-animation-delay: 1s;
+}
+
+#home .container .main .content{
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#home .container .main .content .logo-area{
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+#home .container .main .content .button{
+  margin-top: 40px;
+}
+
+#home .commands {
+  text-align:center;
+  position:relative;
+  overflow: hidden;
+  background:
+}
+
+#home .commands .background-pattern {
+  background:url('/images/pattern.svg') repeat;
+  width: 100%;
+  height: 100%;
+}
+
+#home .commands .content{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+#home .commands .content .screenshot {
+  background: white;
+  display: inline-block;
+  border-radius: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -webkit-animation-delay: 1s;
+}
+
+#home .commands .content .screenshot #screenshot-post {
+  width: 488px;
+  height: 160px;
+  background:url('/images/screenshot-post.png') center center no-repeat;
+  display: none;
+}
+
+#home .commands .content .screenshot #screenshot-create-project {
+  width: 488px;
+  height: 234px;
+  background:url('/images/screenshot-create-project.png') center center no-repeat;
+}
+
+#home .commands .content .screenshot #screenshot-add-people {
+  width: 488px;
+  height: 90px;
+  background:url('/images/screenshot-add-people.png') center center no-repeat;
+  display: none;
+}
+
+#home .main .robot-area {
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#home .main .robot-area .robot {
+  width: 336px;
+  height: 290px;
+  display: inline-block;
+  background: url('/images/robot.png') center center no-repeat;
+  -webkit-animation-delay: 1s;
+  position: absolute;
+  left: 50%;
+  margin-left: -210px;
+}
+
+#home .commands .footer-area{
+  width: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+}
+
+#home .commands .footer-area a{
+  color: #fff;
+}
+
+#home .commands .commands-menu{
+  text-align: left;
+  z-index: 1;
+  position: absolute;
+  font-size: 16px;
+  color: #263445;
+  font-weight: 500;
+  top: 30px;
+  left: 37px;
+  right: 37px;
+}
+
+#home .commands .commands-menu ol{
+  list-style: none;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#home .commands .commands-menu li{
+  display: inline-block;
+  height: 42px;
+  background: transparent;
+  border-radius: 23px;
+  border: 2px solid #263445;
+  color: #263445;
+  margin-left: 10px;
+  line-height: 42px;
+  padding-left: 20px;
+  font-size: 15px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+#home .commands .commands-menu li:hover{
+  background: #263445;
+  border: 2px solid #263445;
+  color: #fff;
+}
+
+#home .commands .commands-menu .active{
+  background: transparent;
+  border: 2px solid #263445;
+  background: #263445;
+  height: 42px;
+  color: white;
+  cursor: default;
+}
+
+#home .commands .commands-menu .active:hover{
+  background: #263445;
+  color: white;
+}
+
+@media (max-width: 1100px) {
+
+  .commands{
+    display: none;
+  }
+
+  #home .container > div{
+    width: 100%;
+  }
+
+}
+
+@media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+only screen and (-moz-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-device-pixel-ratio: 1.5) {
+    .logo{
+        background-image: url('/images/logo@2x.png');
+        background-size: 189px 40px;
+        background-repeat: no-repeat;
+    }
+
+    #home .main .robot-area .robot{
+        background-image: url('/images/robot@2x.png');
+        background-size: 336px 290px;
+        background-repeat: no-repeat;
+    }
+
+    #dashboard .success-illustration {
+      background-image: url('/images/robot-circle-no-eyes@2x.png');
+      background-size: 246px 246px;
+      background-repeat: no-repeat;
+    }
+
+    #dashboard .setup-slack-illustration {
+      background-image: url('/images/robot-circle@2x.png');
+      background-size: 246px 246px;
+      background-repeat: no-repeat;
+    }
+
+    #home .commands .content .screenshot #screenshot-post {
+      background-size: 488px 160px;
+      background-image:url('/images/screenshot-post@2x.png');
+      display: none;
+      background-repeat: no-repeat;
+    }
+
+    #home .commands .content .screenshot #screenshot-create-project {
+      background-size: 488px 234px;
+      background-image:url('/images/screenshot-create-project@2x.png');
+      background-repeat: no-repeat;
+    }
+
+    #home .commands .content .screenshot #screenshot-add-people {
+      background-size: 488px 90px;
+      background-image:url('/images/screenshot-add-people@2x.png');
+      background-repeat: no-repeat;
+    }
+}

@@ -1,0 +1,43 @@
+#extend("base")
+
+#export("title") { BotBot - A Slack bot for Marvel }
+
+#export("content") {
+
+    <div id="dashboard">
+
+      <div class="container">
+
+        <!-- Logo -->
+        <div class="logo-area">
+          <div class="logo animated bounceInUp"></div>
+        </div>
+
+        <!-- Middle -->
+        <div class="animated bounceInUp">
+          #if(slack-token-valid){
+              <div class="success-illustration">
+                <img class="eye-left animated infinite pulse" src="/images/love.svg">
+                <img class="eye-right animated infinite pulse" src="/images/love.svg">
+              </div>
+              <h1>You’re all setup!</h1>
+              <h2>Commands available in your Slack channel:</h2>
+              <h2>/projects, /create-project & /add-people</h2>
+          } ##else() {
+              <div class="setup-slack-illustration"></div>
+              <h1>Boom!💥  One last step… </h1>
+              <h2>Now connect your Slack</h2>
+              <a class="slack-button" href="#(connect-url)"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
+          }
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-area">
+          <a href="https://marvelapp.com/developers/" target="_blank">Uses the Marvel API</a>
+        </div>
+
+      </div>
+
+    </div>
+
+}

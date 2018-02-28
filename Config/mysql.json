@@ -1,0 +1,9 @@
+{
+    "/////": "Start database using: mysql.server start",
+    "hostname": "127.0.0.1",
+    "user": "root",
+    "password": "",
+    "database": "marvel",
+    "encoding": "utf8mb4"
+}
+
