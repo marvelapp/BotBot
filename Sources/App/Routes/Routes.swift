@@ -19,6 +19,7 @@ final class Routes: RouteCollection {
         let slackExternalController = SlackExternalController(droplet: self.drop)
         let slackProjectsController = SlackProjectsController(droplet: self.drop)
         let slackAddPeopleController = SlackAddPeopleController(droplet: self.drop)
+        let slackBotBotController = SlackBotBotController(droplet: self.drop)
         let slackCreateProjectController = SlackCreateProjectController(droplet: self.drop)
         let marvelAuthController = MarvelAuthenticationController(droplet: self.drop)
         let homeController = HomeController(droplet: self.drop)
@@ -41,6 +42,7 @@ final class Routes: RouteCollection {
         drop.group("slack"){ slack in
             slack.get("redirect", handler: slackAuthController.redirect)
             slack.post("projects", handler: slackProjectsController.index)
+            slack.post("botbot", handler: slackBotBotController.index)
             slack.post("create-project", handler: slackCreateProjectController.index)
             slack.post("add-people", handler: slackAddPeopleController.index)
             slack.post("interactive", handler: slackInteractiveController.index)
