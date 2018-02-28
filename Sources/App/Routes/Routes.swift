@@ -32,14 +32,6 @@ final class Routes: RouteCollection {
         // Routes
         drop.get(handler: homeController.index)
 
-        drop.get("privacy"){ request in
-            return try self.view.make("privacy")
-        }
-
-        drop.get("support"){ request in
-            return try self.view.make("support")
-        }
-
         // Marvel oAuth Redirection
         drop.group("marvel"){ slack in
             slack.get("redirect", handler: marvelAuthController.redirect)
