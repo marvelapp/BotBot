@@ -10,18 +10,16 @@ import HTTP
 
 final class HerokuHttpsMiddleware: Middleware {
 
-    let config: Config
-    init(config: Config) throws {
-        self.config = config
+    let enabled: Bool
+    public init(enabled: Bool = true) {
+        self.enabled = enabled
     }
-
-    func respond(to request: Request, chainingTo next: Responder) throws -> Response {
-        if config.environment == .production,
-            let originalProtocol = request.headers["X-Forwarded-Proto"],
-            originalProtocol != "https" {
-            return Response(status: .forbidden, body: "HTTPS Required")
+    public func respond(to request: Request, chainingTo next: Responder) throws -> Response {
+        guard enabled, request.headers["X-Forwarded-Proto"] == "http" else {
+            return try next.respond(to: request)
         }
-
-        return try next.respond(to: request)
+        request.uri.scheme = "https"
+        return Response(redirect: request.uri.description)
     }
+    
 }
