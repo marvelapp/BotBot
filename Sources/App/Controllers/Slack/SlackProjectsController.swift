@@ -5,7 +5,7 @@
 //  Created by Maxime De Greve on 19/02/2018.
 //
 
-import Foundation
+import Vapor
 
 final class SlackProjectsController {
 
@@ -107,7 +107,7 @@ final class SlackProjectsController {
                     "fields": [
                         [
                             "title": "⏱  Last updated",
-                            "value": projectFound.lastModified.timeAgoSinceNow(),
+                            "value": projectFound.lastModified.since(),
                             "short": true
                         ],
                         [
