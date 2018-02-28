@@ -107,7 +107,7 @@ final class SlackProjectsController {
                     "fields": [
                         [
                             "title": "⏱  Last updated",
-                            "value": projectFound.lastModified.since(),
+                            "value": projectFound.lastModified.since().capitalizingFirstLetter(),
                             "short": true
                         ],
                         [
