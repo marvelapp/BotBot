@@ -36,6 +36,9 @@ extension Config {
         let sessionsMiddleware = SessionsMiddleware(memory)
         self.addConfigurable(middleware: sessionsMiddleware, name: "session")
 
+        let herokuMiddelware = try HerokuHttpsMiddleware(config: self)
+        self.addConfigurable(middleware: herokuMiddelware, name: "heroku-https")
+
     }
 
 }
