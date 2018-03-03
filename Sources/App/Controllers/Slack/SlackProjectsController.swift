@@ -24,6 +24,11 @@ final class SlackProjectsController {
             throw Abort.badRequest
         }
 
+        if let text = request.data["text"]?.string, text == "help"{
+            let slackBotBotController = SlackBotBotController(droplet: drop)
+            return try slackBotBotController.index(request:request)
+        }
+
         return try JSON(node: [
             "attachments": [
                 [

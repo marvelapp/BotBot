@@ -28,6 +28,11 @@ final class SlackCreateProjectController {
             throw Abort.badRequest
         }
 
+        if let text = request.data["text"]?.string, text == "help"{
+            let slackBotBotController = SlackBotBotController(droplet: drop)
+            return try slackBotBotController.index(request:request)
+        }
+
         guard
             let teamId = request.data["team_id"]?.string,
             let triggerId = request.data["trigger_id"]?.string else{
