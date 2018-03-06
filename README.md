@@ -4,16 +4,16 @@
 
 BotBot is an open-source Slackbot for [Marvel](https://marvelapp.com) - a design collaboration platform that brings ideas to life.
 
-[GO TO BOTBOT AND INSTALL](https://botbot.marvelapp.com)
+[Go to BotBot and install](https://botbot.marvelapp.com)
 
 BotBot allows you and your team to create, view and manage Marvel projects directly inside of Slack.
 
-Why it's so amazing
-- Anyone in your team can quickly pull up a list of Marvel projects without leaving Slack by typing /projects
-- Create a project in seconds by typing /create
-- Or just grab the code and roll your own bot
+*Why it's so amazing*
+* Anyone in your team can quickly pull up a list of Marvel projects without leaving Slack by typing /projects
+* Create a project in seconds by typing /create-project
+* Or just grab the code and roll your own bot
 
-Built using the [Marvel GraphQL API](https://marvelapp.com/developers/) - get started here.
+Built using the Marvel GraphQL API - [get started here]([Marvel GraphQL API](https://marvelapp.com/developers/)).
 
 Questions? Hit us up on [Twitter](http://twitter.com/marvelapp)
 
