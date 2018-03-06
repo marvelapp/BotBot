@@ -33,6 +33,7 @@ final class SlackInteractiveController {
         guard
             let vertificationTokenRequest = payloadJSON["token"]?.string,
             let callbackId = payloadJSON["callback_id"]?.string else{
+            Swift.print(payloadJSON)
             throw Abort.badRequest
         }
 
