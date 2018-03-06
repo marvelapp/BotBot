@@ -28,6 +28,7 @@ final class SlackExternalController {
         guard
             let vertificationTokenRequest = payloadJSON["token"]?.string,
             let name = payloadJSON["name"]?.string else{
+                Swift.print(payloadJSON)
                 throw Abort.badRequest
         }
 
@@ -57,6 +58,7 @@ final class SlackExternalController {
         guard
             let teamId = payloadJSON["team"]?["id"]?.string,
             let searchValue = payloadJSON["value"]?.string else{
+                Swift.print(payloadJSON)
                 throw Abort.badRequest
         }
 
