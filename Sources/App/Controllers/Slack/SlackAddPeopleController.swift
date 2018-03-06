@@ -100,6 +100,7 @@ final class SlackAddPeopleController {
         guard
             let value = payloadJSON["actions"]?.array?.first?["selected_options"]?.array?.first?["value"]?.int,
             let messageTs = payloadJSON["message_ts"]?.string else {
+                Swift.print(payloadJSON)
                 throw Abort.badRequest
         }
 
