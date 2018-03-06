@@ -14,7 +14,7 @@ BotBot allows you and your team to create, view and manage Marvel projects direc
 * Add people to projects by typing ```/add-people```
 * Or just grab the code and roll your own bot
 
-Built using the Marvel GraphQL API - [get started here]([Marvel GraphQL API](https://marvelapp.com/developers/).
+Built using the Marvel GraphQL API - [get started here](https://marvelapp.com/developers/).
 
 Questions? Hit us up on [Twitter](http://twitter.com/marvelapp)
 
