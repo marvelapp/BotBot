@@ -163,7 +163,7 @@ final class SlackAddPeopleController {
 
 
         // Check if error
-        if let errorMessage = result.data["errors"]?["message"]?.string{
+        if let errorMessage = result.data["errors"]?.array?.first?["message"]?.string{
             return try Error.custom(text: errorMessage)
         }
 
