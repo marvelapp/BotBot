@@ -7,23 +7,25 @@
 
 import Vapor
 
-final class MarvelImage {
+final class MarvelScreen {
 
     // Non optionals
     var uuid = ""
     var width = 0
     var height = 0
-    var displayName = ""
-    var fileName = ""
-    var url = ""
+    var name = ""
+    var content: MarvelContent?
 
     init(with node: Node?) {
         uuid = node?["uuid"]?.string ?? ""
         width = node?["width"]?.int ?? 0
         height = node?["height"]?.int ?? 0
-        url = node?["url"]?.string ?? ""
-        fileName = node?["fileName"]?.string ?? ""
-        displayName = node?["displayName"]?.string ?? ""
+        name = node?["name"]?.string ?? ""
+
+        if let contentNode = node?["content"]{
+            content = MarvelContent(with: contentNode)
+        }
+
     }
 
 }

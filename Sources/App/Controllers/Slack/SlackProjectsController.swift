@@ -107,7 +107,7 @@ final class SlackProjectsController {
                 [
                     "title": projectFound.name,
                     "title_link": projectFound.prototypeUrl,
-                    "thumb_url": projectFound.images.first?.url ?? "",
+                    "thumb_url": projectFound.screens.first?.content?.url ?? "",
                     "footer": "Marvel Prototyping",
                     "fields": [
                         [
