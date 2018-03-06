@@ -34,11 +34,13 @@ final class SlackExternalController {
 
         // Compare the verifications token (Security)
         if vertificationTokenRequest != verificationToken{
+            Swift.print("Verification tokens don't match")
             throw Abort.badRequest
         }
 
         // Check if known callback
         guard let slackCallback = SlackExternalCallbacks(rawValue: name) else{
+            Swift.print("Callback id with '\(name)' doesn't exist")
             throw Abort.badRequest
         }
 

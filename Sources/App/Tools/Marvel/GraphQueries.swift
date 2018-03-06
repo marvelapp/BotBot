@@ -37,41 +37,47 @@ final class GraphQueries {
 
     static let projects =
     """
+        fragment image on ImageScreen {
+          filename
+          url
+        }
+
         query {
-          user {
-            projects(first: 50) {
-              edges {
-                node {
-                  pk
-                  name
-                  prototypeUrl
-                  lastModified
-                  collaborators {
+                user {
+                  projects(first: 40) {
                     edges {
                       node {
                         pk
-                        username
-                        email
-                      }
-                    }
-                  }
-                  images {
-                    edges {
-                      node {
-                        displayName
-                        fileName
-                        url
-                        width
-                        height
-                        uuid
+                        name
+                        prototypeUrl
+                        lastModified
+                        collaborators {
+                          edges {
+                            node {
+                              pk
+                              username
+                              email
+                            }
+                          }
+                        }
+                        screens(first: 2) {
+                          edges {
+                            node {
+                              name
+                              uuid
+                              modifiedAt
+                              content {
+                                __typename
+                                ... image
+                              }
+                            }
+                          }
+                        }
                       }
                     }
                   }
                 }
               }
-            }
-          }
-        }
     """
 
     static func createProject(name: String) -> String{

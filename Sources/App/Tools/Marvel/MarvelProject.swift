@@ -15,7 +15,7 @@ final class MarvelProject {
     var name = ""
     var prototypeUrl = ""
     var lastModified = Date()
-    var images = [MarvelImage]()
+    var screens = [MarvelScreen]()
     var collaborators = [MarvelMember]()
 
     init(with node: Node?) {
@@ -28,10 +28,10 @@ final class MarvelProject {
             lastModified = date
         }
 
-        if let imagesArray = node?["images"]?["edges"]?.array {
-            for image in imagesArray{
-                let image = MarvelImage(with: image["node"])
-                images.append(image)
+        if let screensArray = node?["screens"]?["edges"]?.array {
+            for screen in screensArray{
+                let screen = MarvelScreen(with: screen["node"])
+                screens.append(screen)
             }
         }
 
