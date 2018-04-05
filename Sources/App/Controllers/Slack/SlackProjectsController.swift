@@ -74,30 +74,19 @@ final class SlackProjectsController {
             return try Error.with(name: .noMarvelToken)
         }
 
-        let projects = try Marvel(droplet: drop).projects(accessToken: marvelToken)
 
-        guard let projectsArray = projects.data["data"]?["user"]?["projects"]?["edges"]?.array else {
+        let projects = try Marvel(droplet: drop).project(pk: value, accessToken: marvelToken)
+
+        guard let projectDic = projects.data["data"]?["project"] else {
             return try Error.with(name: .general)
         }
 
-        var projectsNode = [MarvelProject]()
-        for project in projectsArray{
-            let project = MarvelProject(with: project["node"])
-            projectsNode.append(project)
-        }
+        let project = MarvelProject(with: projectDic)
 
-        let project = projectsNode.filter { (project) -> Bool in
-            return project.pk == value
-        }.first
-
-        guard let projectFound = project else {
-            return try Error.with(name: .general)
-        }
-
-        let collaborators = projectFound.collaborators.flatMap { (collab) -> String? in
+        let collaborators = project.collaborators.flatMap { (collab) -> String? in
             return collab.username
         }.joined(separator: ", ")
-        let collabWord = projectFound.collaborators.count > 1 ? "👧  \(projectFound.collaborators.count) collaborators" : "👧  1 collaborator"
+        let collabWord = project.collaborators.count > 1 ? "👧  \(project.collaborators.count) collaborators" : "👧  1 collaborator"
 
         return try JSON(node: [
             "response_type": "in_channel",
@@ -105,14 +94,14 @@ final class SlackProjectsController {
             "delete_original": true,
             "attachments": [
                 [
-                    "title": projectFound.name,
-                    "title_link": projectFound.prototypeUrl,
-                    "thumb_url": projectFound.screens.first?.content?.url ?? "",
+                    "title": project.name,
+                    "title_link": project.prototypeUrl,
+                    "thumb_url": project.screens.first?.content?.url ?? "",
                     "footer": "Marvel Prototyping",
                     "fields": [
                         [
                             "title": "⏱  Last updated",
-                            "value": projectFound.lastModified.since().capitalizingFirstLetter(),
+                            "value": project.lastModified.since().capitalizingFirstLetter(),
                             "short": true
                         ],
                         [

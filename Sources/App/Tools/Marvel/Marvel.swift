@@ -96,8 +96,12 @@ final class Marvel {
         return try graphQL(query: GraphQueries.myUser, accessToken: accessToken)
     }
 
-    func projects(accessToken: String) throws -> Response{
+    func projectsIncludingCompany(accessToken: String) throws -> Response{
         return try graphQL(query: GraphQueries.projects, accessToken: accessToken)
+    }
+
+    func project(pk: Int, accessToken: String) throws -> Response{
+        return try graphQL(query: GraphQueries.project(pk: pk), accessToken: accessToken)
     }
 
     func createProject(name: String, accessToken: String) throws -> Response{
