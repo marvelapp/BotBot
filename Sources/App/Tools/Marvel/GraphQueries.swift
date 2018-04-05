@@ -140,7 +140,7 @@ final class GraphQueries {
             }
 
             query {
-              project(pk: \(pk) {
+              project(pk: \(pk)) {
                 pk
                 name
                 prototypeUrl
