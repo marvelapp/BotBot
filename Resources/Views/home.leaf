@@ -11,7 +11,7 @@
       <div class="main">
 
         <div class="github animated fadeIn">
-          <iframe src="https://ghbtns.com/github-btn.html?user=marvelapp&repo=MarvelSlackBot&type=watch&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+          <iframe src="https://ghbtns.com/github-btn.html?user=marvelapp&repo=BotBot&type=watch&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
         </div>
 
         <div class="content">
@@ -24,7 +24,7 @@
           <!-- Middle -->
           <div class="animated slideInDown">
             <h1>A Slack bot for Marvel</h1>
-            <h2>Post & create Marvel projects directly from Slack</h2>
+            <h2>Create and view Marvel projects directly in Slack</h2>
             <a class="button" href="#(connect-url)">Connect with <img src="/images/marvel-logo.svg" style="margin-left:5px"></a>
           </div>
 
@@ -58,7 +58,7 @@
         </div>
 
         <div class="footer-area animated fadeIn">
-          <a href="https://marvelapp.com/developers/" target="_blank">Uses the Marvel API</a>
+          <a href="https://marvelapp.com/developers/" target="_blank">Created with the Marvel API</a>
         </div>
 
         <div class="background-pattern"></div>

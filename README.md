@@ -2,11 +2,21 @@
 
 <img src="/Public/images/github-header.png?raw=true" width="888">
 
-Post & create [Marvel](https://marvelapp.com) projects directly from Slack, written in Swift (Vapor).
+BotBot is an open-source Slackbot for [Marvel](https://marvelapp.com) - a design collaboration platform that brings ideas to life.
 
-Build your own integration using the [Marvel API](https://marvelapp.com/developers/).
+[Go to BotBot and install](https://botbot.marvelapp.com)
 
-[Try it out](https://botbot.marvelapp.com)
+BotBot allows you and your team to create, view and manage Marvel projects directly inside of Slack.
+
+**Why it's so amazing**
+* Anyone in your team can quickly pull up a list of Marvel projects without leaving Slack by typing ```/projects```
+* Create a project in seconds by typing ```/create-project```
+* Add people to projects by typing ```/add-people```
+* Or just grab the code and roll your own bot
+
+Built using the Marvel GraphQL API - [get started here](https://marvelapp.com/developers/).
+
+Questions? Hit us up on [Twitter](http://twitter.com/marvelapp)
 
 ## 🎒 Before building (dependencies)
 * Install [Xcode](https://developer.apple.com/xcode/)
@@ -27,9 +37,3 @@ Build your own integration using the [Marvel API](https://marvelapp.com/develope
 
 ## 📖 Documentation
 Visit the Vapor web framework's [documentation](http://docs.vapor.codes) for instructions on how to use this package.
-
-## 💧 Community
-Join the welcoming community of fellow Vapor developers in [Slack](http://vapor.team).
-
-## 🔧 Compatibility
-This package has been tested on macOS and Heroku.

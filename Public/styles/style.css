@@ -134,6 +134,8 @@ a{
   flex-direction: row;
   align-items: stretch;
   height: 100vh;
+  min-height: 840px;
+
 }
 
 #home .container > div {
@@ -376,4 +378,17 @@ only screen and (min-device-pixel-ratio: 1.5) {
       background-image:url('/images/screenshot-add-people@2x.png');
       background-repeat: no-repeat;
     }
+}
+
+
+@media (max-height: 900px) {
+
+  #home .main .robot-area .robot{
+      background-size: 258px 223px;
+      background-repeat: no-repeat;
+      width: 258px;
+      height: 223px;
+      margin-left: -155px;
+  }
+
 }

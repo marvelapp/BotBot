@@ -76,8 +76,6 @@ final class SlackExternalController {
             return try Error.with(name: .noMarvelToken)
         }
 
-        // Get company members
-
         let projectsJSON = try projectsInSlackFormat(request: request, marvelAccessToken: marvelToken)
 
         // Filter on what the user is searching for in the field on Slack
@@ -155,10 +153,15 @@ final class SlackExternalController {
 
     func projectsInSlackFormat(request: Request, marvelAccessToken: String, displayProperty: String = "text") throws -> [JSON]  {
 
-        let result = try Marvel(droplet: drop).projects(accessToken: marvelAccessToken)
+        let result = try Marvel(droplet: drop).projectsIncludingCompany(accessToken: marvelAccessToken)
 
-        guard let projectsArray = result.data["data"]?["user"]?["projects"]?["edges"]?.array else {
+        guard var projectsArray = result.data["data"]?["user"]?["projects"]?["edges"]?.array else {
             throw Abort.badRequest
+        }
+
+        // Check if users has company projects
+        if let companyProjectsArray = result.data["data"]?["user"]?["company"]?["projects"]?["edges"]?.array {
+            projectsArray.append(contentsOf: companyProjectsArray)
         }
 
         var projectsNode = [MarvelProject]()
@@ -167,10 +170,15 @@ final class SlackExternalController {
             projectsNode.append(project)
         }
 
+        // Clear duplicates as company projects might include personal projects...
+        let filteredProjectsNode = projectsNode.filterDuplicates {
+            $0.pk == $1.pk
+
+        }
 
         // Map to a readable Slack format
 
-        let projectsJSON = try projectsNode.map { (project) -> JSON in
+        let projectsJSON = try filteredProjectsNode.map { (project) -> JSON in
 
             let json = try JSON(node: [
                 displayProperty: project.name,

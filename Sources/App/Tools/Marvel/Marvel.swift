@@ -96,8 +96,12 @@ final class Marvel {
         return try graphQL(query: GraphQueries.myUser, accessToken: accessToken)
     }
 
-    func projects(accessToken: String) throws -> Response{
+    func projectsIncludingCompany(accessToken: String) throws -> Response{
         return try graphQL(query: GraphQueries.projects, accessToken: accessToken)
+    }
+
+    func project(pk: Int, accessToken: String) throws -> Response{
+        return try graphQL(query: GraphQueries.project(pk: pk), accessToken: accessToken)
     }
 
     func createProject(name: String, accessToken: String) throws -> Response{
@@ -116,15 +120,15 @@ final class Marvel {
 
     func graphQL(query: String, accessToken: String) throws -> Response{
 
-        let body: Node = [
+        let body: JSON = [
             "query": .string(query)
             ]
 
-
         let request = Request(method: .post, uri: "\(apiUrl)/graphql/")
-        request.query = body
+        request.body = body.makeBody()
         request.headers = [
-            "Authorization" : "Bearer \(accessToken)"
+            "Authorization" : "Bearer \(accessToken)",
+            "Content-Type": "application/json"
         ]
         return try drop.client.respond(to: request)
 
