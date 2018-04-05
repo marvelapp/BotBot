@@ -83,7 +83,7 @@ final class SlackProjectsController {
 
         let project = MarvelProject(with: projectDic)
 
-        let collaborators = project.collaborators.flatMap { (collab) -> String? in
+        let collaborators = project.collaborators.compactMap { (collab) -> String? in
             return collab.username
         }.joined(separator: ", ")
         let collabWord = project.collaborators.count > 1 ? "👧  \(project.collaborators.count) collaborators" : "👧  1 collaborator"
