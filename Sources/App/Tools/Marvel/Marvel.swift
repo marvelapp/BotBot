@@ -18,7 +18,8 @@ final class Marvel {
         drop = droplet
     }
 
-    let apiUrl = "https://marvelapp.com"
+    let apiUrl = "https://api.marvelapp.com"
+    let marvelUrl = "https://marvelapp.com"
 
     var clientId: String {
         return drop.config["marvel", "client_id"]?.string ?? "No client id"
@@ -38,7 +39,7 @@ final class Marvel {
         }
 
         let currentState = try state(request: request)
-        let url = "\(apiUrl)/oauth/authorize/?state=\(currentState)&client_id=\(clientId)&response_type=code&scope=\(spaceSeperatedScopes)"
+        let url = "\(marvelUrl)/oauth/authorize/?state=\(currentState)&client_id=\(clientId)&response_type=code&scope=\(spaceSeperatedScopes)"
         return url
 
     }
@@ -68,7 +69,7 @@ final class Marvel {
             "code": .string(code),
             ]
 
-        let request = Request(method: .post, uri: "\(apiUrl)/oauth/token/")
+        let request = Request(method: .post, uri: "\(marvelUrl)/oauth/token/")
         request.query = body
         return try drop.client.respond(to: request)
 
@@ -84,7 +85,7 @@ final class Marvel {
             "scope": .string(marvelToken.scopes),
             ]
 
-        let request = Request(method: .post, uri: "\(apiUrl)/oauth/token/")
+        let request = Request(method: .post, uri: "\(marvelUrl)/oauth/token/")
         request.query = body
         return try drop.client.respond(to: request)
 
