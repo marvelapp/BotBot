@@ -118,7 +118,7 @@ final class GraphQueries {
 
         return """
             mutation {
-                createProject(name: "\(name)") {
+                createProject(input: {name: "\(name)"}) {
                     ok
                     project {
                         name
@@ -178,7 +178,7 @@ final class GraphQueries {
 
         return """
             mutation {
-                addCollaboratorsToProject(emails: ["\(email)"], projectPk: \(projectPk)){
+                addCollaboratorsToProject(input: {emails: ["\(email)"], projectPk: \(projectPk)}){
                     project{
                         name
                     }
